@@ -1,0 +1,28 @@
+{
+  "name": "ng-antd-admin",
+  "version": "0.1.0",
+  "description": "admin system use angular4.0 and antd",
+  "main": "index.js",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkvirus/ng-antd-admin.git"
+  },
+  "keywords": [
+    "angular4.0",
+    "antd"
+  ],
+  "author": "dkvirus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dkvirus/ng-antd-admin/issues"
+  },
+  "homepage": "https://github.com/dkvirus/ng-antd-admin#readme"
+}
