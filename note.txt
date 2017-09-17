@@ -1,0 +1,5 @@
+1. css 中 calc() 函数和 vh 单位的妙用。
+  height: calc(100vh - 180px)   浏览器可视化窗口高度 - 180px
+
+  height   min-height   max-height  用法
+2. :host ::ng-deep   组件样式知识点
