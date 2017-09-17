@@ -35,6 +35,6 @@ $ ng server
 
 ## 资料
 
-[大漠沙秋大牛的 Nicefish 项目](https://github.com/damoqiongqiu/NiceFish)
+[大漠之秋大牛的 Nicefish 项目](https://github.com/damoqiongqiu/NiceFish)
 
 [阿里云 UI 框架：NG-ZORRO](https://ng.ant.design/#/docs/angular/introduce)
