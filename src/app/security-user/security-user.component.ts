@@ -1,78 +1,59 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  templateUrl: './security-user.component.html'
+  selector: 'app-security-user',
+  templateUrl: './security-user.component.html',
+  styleUrls: ['./security-user.component.css']
 })
-export class SecurityUserComponent {
-
-  inputValue: string;
-
-  _size = 'middle';
+export class SecurityUserComponent implements OnInit {
 
   data = [
     {
       key    : '1',
-      name   : 'John Brown',
-      age    : 32,
-      address: 'New York No. 1 Lake Park',
+      id: 'super',
+      name   : '超级管理员',
+      orgName: '总行',
+      phone    : '13065781247',
+      email: 'super@xx.com',
     }, {
       key    : '2',
-      name   : 'Jim Green',
-      age    : 42,
-      address: 'London No. 1 Lake Park',
+      id: 'admin',
+      name   : '管理员',
+      orgName: '上海银行',
+      phone    : '18065781247',
+      email: 'admin@xx.com',
     }, {
       key    : '3',
-      name   : 'Joe Black',
-      age    : 32,
-      address: 'Sidney No. 1 Lake Park',
-    },
-    {
-      key    : '4',
-      name   : 'John Brown',
-      age    : 32,
-      address: 'New York No. 1 Lake Park',
-    }, {
-      key    : '5',
-      name   : 'Jim Green',
-      age    : 42,
-      address: 'London No. 1 Lake Park',
-    }, {
-      key    : '6',
-      name   : 'Joe Black',
-      age    : 32,
-      address: 'Sidney No. 1 Lake Park',
-    },
-    {
-      key    : '7',
-      name   : 'John Brown',
-      age    : 32,
-      address: 'New York No. 1 Lake Park',
-    }, {
-      key    : '8',
-      name   : 'Jim Green',
-      age    : 42,
-      address: 'London No. 1 Lake Park',
-    }, {
-      key    : '9',
-      name   : 'Joe Black',
-      age    : 32,
-      address: 'Sidney No. 1 Lake Park',
-    },
-    {
-      key    : '10',
-      name   : 'John Brown',
-      age    : 32,
-      address: 'New York No. 1 Lake Park',
-    }, {
-      key    : '11',
-      name   : 'Jim Green',
-      age    : 42,
-      address: 'London No. 1 Lake Park',
-    }, {
-      key    : '12',
-      name   : 'Joe Black',
-      age    : 32,
-      address: 'Sidney No. 1 Lake Park',
+      id: 'guest',
+      name   : '游客',
+      orgName: '-',
+      phone    : '18365781247',
+      email: 'guest@xx.com',
     }
   ];
+
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
+  handleEdit () {
+    alert('编辑功能待开发');
+  }
+  handleDelete () {
+    alert('删除功能待开发');
+  }
+  handleSearch () {
+    alert('模糊查询功能待开发');
+  }
+  handleReset () {
+    alert('重置功能待开发');
+  }
+  handleCreate () {
+    alert('新增功能待开发');
+  }
+  handleRoleSetting () {
+    alert('角色配置功能待开发');
+  }
 }

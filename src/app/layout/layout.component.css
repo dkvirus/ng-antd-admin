@@ -1,0 +1,92 @@
+:host .logo {
+  height: 22px;
+  margin: 30px 15px;
+}
+
+/*菜单导航条上面的图标样式*/
+:host .logo img {
+  width: 40px;
+  margin-right: 8px;
+}
+
+/*菜单导航条上面的文字样式*/
+:host .logo span {
+  color:lightgrey;
+  vertical-align: text-bottom;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 40px;
+}
+
+:host .ant-layout-sider-collapsed .nav-text {
+  display: none;
+}
+
+:host .ant-layout-sider-collapsed .ant-menu-submenu-title:after {
+  display: none;
+}
+
+:host .ant-layout-sider-collapsed .anticon {
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+:host .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+:host .trigger:hover {
+  color: #108ee9;
+}
+
+/*顶部*/
+:host .nz-header {
+  background: #fff;
+  padding:0;
+  line-height: 47px;
+  height: 47px;
+}
+
+/*主动提醒，小邮箱图标*/
+:host .nz-header .mail {
+  display: inline-block;
+  float: right;
+  line-height: 47px;
+  height: 47px;
+  width: 47px;
+  margin-right: 15px;
+  background-color: transparent;
+  text-align: center;
+  vertical-align: middle;
+}
+:host .nz-header .mail:hover{
+  background-color: lightblue;
+}
+
+/*顶部右侧登录用户下拉菜单样式*/
+:host .nz-header .nz-dropdown {
+  float: right;
+  margin-right: 25px;
+  border-bottom: 2px solid transparent;
+}
+:host .nz-header .nz-dropdown:hover {
+  border-bottom: 2px solid #108ee9;
+}
+
+/*处理下拉菜单*/
+:host .nz-header .nz-dropdown a{
+  display: inline-block;
+  color: #666;
+  width: 80px;
+}
+:host .nz-header .nz-dropdown ul{
+  margin-top: 20px;
+  width: 120px;
+}
+
+

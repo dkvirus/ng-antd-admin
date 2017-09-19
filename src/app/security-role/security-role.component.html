@@ -1,6 +1,6 @@
 <div nz-row style="margin-bottom: 15px;">
   <div nz-col [nzSpan]="8">
-    <nz-input [nzPlaceHolder]="'请输入用户名称'"></nz-input>
+    <nz-input [nzPlaceHolder]="'请输入角色名称'"></nz-input>
   </div>
 </div>
 <div nz-row style="margin-bottom: 15px;">
@@ -18,23 +18,17 @@
 <nz-table #nzTable [nzDataSource]="data" [nzPageSize]="10">
   <thead nz-thead>
   <tr>
-    <th nz-th [nzWidth]="'10%'"><span>登录账号</span></th>
-    <th nz-th [nzWidth]="'15%'"><span>用户昵称</span></th>
-    <th nz-th [nzWidth]="'15%'"><span>所属机构</span></th>
-    <th nz-th [nzWidth]="'15%'"><span>联系方式</span></th>
-    <th nz-th [nzWidth]="'15%'"><span>电子邮箱</span></th>
+    <th nz-th [nzWidth]="'35%'"><span>用户名称</span></th>
+    <th nz-th [nzWidth]="'35%'"><span>描述</span></th>
     <th nz-th><span>操作</span></th>
   </tr>
   </thead>
   <tbody nz-tbody>
   <tr nz-tbody-tr *ngFor="let data of nzTable.data">
     <td nz-td>
-      <a>{{data.id}}</a>
+      <a>{{data.name}}</a>
     </td>
-    <td nz-td>{{data.name}}</td>
-    <td nz-td>{{data.orgName}}</td>
-    <td nz-td>{{data.phone}}</td>
-    <td nz-td>{{data.email}}</td>
+    <td nz-td>{{data.desc}}</td>
     <td nz-td>
       <button nz-button (click)="handleEdit()">
         <i class="anticon anticon-edit"></i><span>编辑</span>
@@ -42,10 +36,11 @@
       <button nz-button (click)="handleDelete()">
         <i class="anticon anticon-delete"></i><span>删除</span>
       </button>
-      <button nz-button (click)="handleRoleSetting()">
-        <i class="anticon anticon-role"></i><span>角色配置</span>
+      <button nz-button (click)="handleFuncSetting()">
+        <i class="anticon anticon-role"></i><span>菜单配置</span>
       </button>
     </td>
   </tr>
   </tbody>
 </nz-table>
+

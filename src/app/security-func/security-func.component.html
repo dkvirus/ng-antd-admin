@@ -1,20 +1,26 @@
 <div nz-row style="margin-bottom: 15px;">
   <div nz-col [nzSpan]="8">
-    <nz-input [nzType]="'search'" [nzPlaceHolder]="'请输入机构名称'" (search)="handleSearch()" [(ngModel)]="orgName"></nz-input>
+    <nz-input [nzPlaceHolder]="'请输入菜单/按钮名称'"></nz-input>
   </div>
-  <div nz-col [nzSpan]="8" [nzOffset]="8">
-    <button nz-button [nzType]="'primary'" style="float: right;" (click)="showModal()">
-      <i class="anticon anticon-save"></i><span>新增</span>
-    </button>
-  </div>
+</div>
+<div nz-row style="margin-bottom: 15px;">
+  <button nz-button [nzType]="'primary'" style="float: left;margin-right: 10px;" (click)="handleSearch()">
+    <span>查询</span>
+  </button>
+  <button nz-button [nzType]="'default'" style="float: left;" (click)="handleReset()">
+    <span>重置</span>
+  </button>
+  <button nz-button [nzType]="'primary'" style="float: right;" (click)="handleCreate()">
+    <i class="anticon anticon-save"></i><span>新增</span>
+  </button>
 </div>
 
 <nz-table #nzTable [nzDataSource]="data" [nzPageSize]="10">
   <thead nz-thead>
   <tr>
-    <th nz-th [nzWidth]="'20%'"><span>机构名称</span></th>
-    <th nz-th [nzWidth]="'20%'"><span>父级机构名称</span></th>
-    <th nz-th [nzWidth]="'20%'"><span>描述</span></th>
+    <th nz-th [nzWidth]="'20%'"><span>功能名称</span></th>
+    <th nz-th [nzWidth]="'20%'"><span>功能类型</span></th>
+    <th nz-th [nzWidth]="'20%'"><span>父级功能名称</span></th>
     <th nz-th><span>操作</span></th>
   </tr>
   </thead>
@@ -27,13 +33,13 @@
           <nz-row-expand-icon [(nzExpand)]="item.expand" (nzExpandChange)="collapse(expandDataCache[data.key],item,$event)" [nzShowExpand]="!item.children"></nz-row-expand-icon>
           {{item.name}}
         </td>
+        <td nz-td>{{item.type === 'menu' ? '菜单' : '按钮'}}</td>
         <td nz-td>{{item.parentName}}</td>
-        <td nz-td>{{item.desc}}</td>
         <td nz-td>
-          <button nz-button (click)="showModal(item)">
+          <button nz-button (click)="handleEdit()">
             <i class="anticon anticon-edit"></i><span>编辑</span>
           </button>
-          <button nz-button (click)="handleDelete(item.id)">
+          <button nz-button (click)="handleDelete()">
             <i class="anticon anticon-delete"></i><span>删除</span>
           </button>
         </td>
@@ -42,9 +48,3 @@
   </ng-template>
   </tbody>
 </nz-table>
-
-<nz-modal [nzVisible]="isVisible" [nzTitle]="'第一个 Modal'" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)" (nzOnOk)="handleOk($event)">
-  <ng-template #modalContent>
-    模态框，放表单
-  </ng-template>
-</nz-modal>
