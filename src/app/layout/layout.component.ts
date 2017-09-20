@@ -67,9 +67,13 @@ export class LayoutComponent implements OnInit {
   }
   // 递归获取面包屑名称
   geneBreadcrumb (menuRouter, breadArr) {
+<<<<<<< HEAD
     if (menuRouter === '/layout') {
       return;
     }
+=======
+    if (menuRouter === '/layout') {return;}
+>>>>>>> 8a849c1d1dd7ab4ac5ebe24e54114f6de9e34024
     // step1: 根据路由找到菜单对象，目的是获取 parentId
     const currentMenu = this.menuArr.filter(item => item.id === menuRouter)[0];
     // step2: 根据 parentId 去找对象，知道没有 paretnId 对象，否则递归
