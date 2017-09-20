@@ -8,13 +8,13 @@
     <!--菜单内容-->
     <ul *ngIf="menuTree.length > 0" nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
       <div *ngFor="let menu of menuTree">
-        <li nz-menu-item *ngIf="!menu.children" (click)="handleClickMenuItem($event)">
+        <li nz-menu-item *ngIf="!menu?.children" (click)="handleClickMenuItem($event)">
           <span>
             <i class="anticon anticon-{{menu.icon}}"></i>
             <span class="nav-text" routerLink="{{menu.router}}">{{menu.name}}</span>
           </span>
         </li>
-        <li nz-submenu *ngIf="menu.children">
+        <li nz-submenu *ngIf="menu?.children">
           <span title>
             <i class="anticon anticon-{{menu.icon}}"></i>
             <span class="nav-text">{{menu.name}}</span>
@@ -51,6 +51,23 @@
       <!--主动提醒功能，小邮箱图标-->
       <div class="mail">
         <i class="anticon anticon-mail"></i>
+      </div>
+      <div class="search-menu">
+        <nz-select
+          style="width: 200px;"
+          nzAllowClear
+          [(ngModel)]="selectedOption"
+          (ngModelChange)="handleSearchChange($event)"
+          [nzPlaceHolder]="'快速查找菜单'"
+          [nzShowSearch]="true"
+          >
+          <nz-option
+            *ngFor="let option of searchOptions"
+            [nzLabel]="option.name"
+            [nzValue]="option.id"
+          >
+          </nz-option>
+        </nz-select>
       </div>
     </nz-header>
     <nz-content style="margin:0 16px;">

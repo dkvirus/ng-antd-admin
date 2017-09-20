@@ -68,6 +68,12 @@
   background-color: lightblue;
 }
 
+/*菜单搜索框*/
+:host .nz-header .search-menu {
+  float: right;
+  margin-right: 20px;
+}
+
 /*顶部右侧登录用户下拉菜单样式*/
 :host .nz-header .nz-dropdown {
   float: right;

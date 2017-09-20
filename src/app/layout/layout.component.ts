@@ -13,19 +13,33 @@ export class LayoutComponent implements OnInit {
   menuLogo: string = config.menuLogo;
   menuTitle: string = config.menuTitle;
   footTitle: string = config.footTitle;
-  isCollapsed = false;
-  breadcrumb: any;
-  menuTree: any = menuTree;
-  menuArr: any;
-  constructor(router: Router) {
+  isCollapsed = false;        // 控制左边菜单导航条抽屉效果的图标
+  breadcrumb: any;            // 面包屑数组
+  menuTree: any = menuTree;   // 菜单树状数据结构
+  menuArr: any;               // 菜单列表数据结构
+  selectedOption;             // 菜单搜索框中选中值
+  searchOptions;              // 菜单搜索框下拉框选项
+  constructor(private router: Router) {
     // 树状菜单数据生成列表菜单数据，用于制作面包屑
     this.menuArr = this.geneMenuList(this.menuTree, []);
     // 初始化时面包屑根据路由地址自动变换
     const initRouter = router.url.replace('/layout/', '');
     this.breadcrumb = this.geneBreadcrumb(initRouter, []);
+    // 初始化菜单搜索框下拉列表
+    this.geneMenuSearch();
   }
 
   ngOnInit () {
+  }
+  // 过滤菜单搜索框列表数据
+  geneMenuSearch () {
+    this.searchOptions = this.menuArr.filter(
+      item => item.router
+    );
+  }
+  // 处理菜单搜索框跳转路由
+  handleSearchChange (value) {
+    this.router.navigate([`/layout/${value}`]);
   }
   // 修改密码功能
   handleUpdatePw () {
